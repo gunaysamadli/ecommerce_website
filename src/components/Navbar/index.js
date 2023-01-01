@@ -1,46 +1,84 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import FormControl from '@mui/material/FormControl';
-import NativeSelect from '@mui/material/NativeSelect';
+import "./index.scss"
+import { AiOutlineHeart, AiOutlineShoppingCart, AiOutlineSearch } from "react-icons/ai";
+import { BsFillPersonFill } from "react-icons/bs";
 
 const Navbar = () => {
   return (
-    <div>
-      <div>
-        <div>
-          <p>FREE SHIPPING FOR ALL ORDERS OF <span>$200 </span></p>
+    <div classname="navbar">
+      <div className="container">
+        <div className="top-header">
+          <div className="row align-items-center justify-content-between">
+            <div className="col-lg-4">
+              <img src="http://umino.demo.towerthemes.com/image/catalog/logo/logo.png" alt="Umino" />
+            </div>
+            <div className="col-lg-4">
+              <div className="header_search">
+                <form>
+                  <input className='header_search_input' type="text" placeholder='Search Enter story here ...' />
+                  <div className="search_btn">
+                    <button>
+                      <AiOutlineSearch />
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div className="col-lg-4">
+              <div className="nav_heart_basket_icons d-flex justify-content-end">
+                <div className="heart_icon">
+                  <Link to="/whislist">
+                    <AiOutlineHeart />
+                    <span className='product_count'>0</span>
+                  </Link>
+                </div>
+                <div className="basket_icon">
+                  <Link to="/whislist">
+                    <AiOutlineShoppingCart />
+                    <span className='product_count'>0</span>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div>
-          {/* <FormControl fullWidth>
-            <InputLabel variant="standard" htmlFor="uncontrolled-native">
-              Age
-            </InputLabel>
-            <NativeSelect
-              defaultValue={30}
-              inputProps={{
-                name: 'age',
-                id: 'uncontrolled-native',
-              }}
-            >
-              <option value={10}>Ten</option>
-              <option value={20}>Twenty</option>
-              <option value={30}>Thirty</option>
-            </NativeSelect>
-          </FormControl> */}
+        <div className="bottom-header">
+          <div className="row">
+            <div className="col-lg-10">
+              <nav>
+                <ul className='nav-links d-flex align-items-center'>
+                  <li className='nav-link'>
+                    <Link to="/">Home</Link>
+                  </li>
+                  <li className='nav-link'>
+                    <Link to="/shop">Shop</Link>
+                  </li>
+                  <li className='nav-link'>
+                    <Link to="/specials">Specials</Link>
+                  </li>
+                  <li className='nav-link'>
+                    <Link to="/contact">Contact Us</Link>
+                  </li>
+                  <li className='nav-link'>
+                    <Link to="/blog">blog</Link>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div className="col-lg-2">
+              <div className="user_login_register d-flex">
+                <BsFillPersonFill />
+                <div className="login_register d-flex align-items-center">
+                  <Link>Register</Link>
+                  <span> or</span>
+                  <Link>Login</Link>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-        </ul>
-      </nav>
     </div>
 
   )

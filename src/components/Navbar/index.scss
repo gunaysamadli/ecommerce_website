@@ -1,0 +1,91 @@
+svg{
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    transition: .1s;
+    &:hover{
+        fill: #fed100;
+    }
+}
+
+a{
+    text-decoration: none !important;
+    color: #333333 !important;
+    &:hover{
+        color: #fed100 !important;
+    }
+}
+.top-header{
+    padding: 40px 0;
+    .header_search{
+        position: relative;
+        .header_search_input{
+            border: 2px solid #fed100;
+            width: 100%;
+            padding: 15px;
+            border-radius: 30px;
+            outline: none;
+        }
+
+        .search_btn button{
+            position: absolute;
+            top: 50%; 
+            right: 0;
+            transform: translate(-50%, -50%);
+            border: none !important;
+            background-color: #fff;
+           
+            
+        }
+        
+    }
+
+    .nav_heart_basket_icons{
+       
+        a{
+            position: relative;
+            padding: 10px;
+
+            .product_count{
+                width: 27px;
+                height: 27px;
+                line-height: 28px;
+                font-size: 20px;
+                background: #fed100;
+                color: #333333;
+                position: absolute;
+                bottom: -11px;
+                text-align: center;
+                font-weight: 400;
+                border-radius: 50%;
+            }
+        }
+
+       
+    }
+    
+}
+.bottom-header{
+    margin: 20px 0;
+    .nav-links{
+       .nav-link{
+           a{
+            padding: 5px 12px 5px 12px;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            font-weight: 400;
+            
+           }
+       }
+    }
+    .login_register{
+        a{
+            padding: 0 5px;
+            font-size:17px;
+            font-weight: 400;
+        }
+        span{
+            font-size:17px;
+        }
+    }
+}

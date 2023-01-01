@@ -5,11 +5,12 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-import Contact from "./components/Contact";
+import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
-import Home from "./components/Home";
+import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
-import Error from "./components/Error"
+import Error from "./components/Error";
+
 
 export default function App() {
   return (

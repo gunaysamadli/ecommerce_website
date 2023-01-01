@@ -11,7 +11,9 @@ const Navbar = () => {
         <div className="top-header">
           <div className="row align-items-center justify-content-between">
             <div className="col-lg-4">
-              <img src="http://umino.demo.towerthemes.com/image/catalog/logo/logo.png" alt="Umino" />
+              <Link to="/">
+                <img src="http://umino.demo.towerthemes.com/image/catalog/logo/logo.png" alt="Umino" />
+              </Link>
             </div>
             <div className="col-lg-4">
               <div className="header_search">

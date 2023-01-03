@@ -72,9 +72,9 @@ const Navbar = () => {
               <div className="user_login_register d-flex">
                 <BsFillPersonFill />
                 <div className="login_register d-flex align-items-center">
-                  <Link>Register</Link>
+                  <Link to="">Register</Link>
                   <span> or</span>
-                  <Link>Login</Link>
+                  <Link to="">Login</Link>
                 </div>
               </div>
             </div>

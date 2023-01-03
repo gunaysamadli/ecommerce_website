@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import './index.scss'
+import './index.scss';
+import Button from '../Button'
 
 export default class SimpleSlider extends Component {
     render() {
@@ -20,7 +21,7 @@ export default class SimpleSlider extends Component {
                         <div className="col-lg-6">
                             <h2>Wooden Chair</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit debitis ipsum autem quibusdam! Sed quaerat, laboriosam assumenda amet numquam autem odio placeat dicta repellendus nesciunt hic consectetur itaque nisi delectus!</p>
-                            <button>Read More</button>
+                           <Button base >Read me</Button>
                         </div>
                     </div>
                 </div>
@@ -30,7 +31,7 @@ export default class SimpleSlider extends Component {
                         <div className="col-lg-6">
                             <h2>Wooden Chair</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit debitis ipsum autem quibusdam! Sed quaerat, laboriosam assumenda amet numquam autem odio placeat dicta repellendus nesciunt hic consectetur itaque nisi delectus!</p>
-                            <button>Read More</button>
+                            <Button base>Read me</Button>
                         </div>
                     </div>
                 </div>

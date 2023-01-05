@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import Error from "./components/Error";
+import Shop from "./pages/Shop";
 
 
 export default function App() {
@@ -20,6 +21,9 @@ export default function App() {
         <Switch>
           <Route path="/" exact>
             <Home />
+          </Route>
+          <Route path="/shop" exact>
+            <Shop />
           </Route>
           <Route path="/contact" exact>
             <Contact />

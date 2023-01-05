@@ -48,12 +48,12 @@ function FilterSlider() {
                         <div className="_desc text-center">
                             <Link>Apple Cinema 30-inch HD Flat-Panel Display</Link>
                         </div>
-                        <div class="rating">
-                            <span class="icon-ratings"><AiOutlineStar /></span>
-                            <span class="icon-ratings"><AiOutlineStar /></span>
-                            <span class="icon-ratings"><AiOutlineStar /></span>
-                            <span class="icon-ratings"><AiOutlineStar /></span>
-                            <span class="icon-ratings"><AiOutlineStar /></span>
+                        <div className="rating">
+                            <span className="icon-ratings"><AiOutlineStar /></span>
+                            <span className="icon-ratings"><AiOutlineStar /></span>
+                            <span className="icon-ratings"><AiOutlineStar /></span>
+                            <span className="icon-ratings"><AiOutlineStar /></span>
+                            <span className="icon-ratings"><AiOutlineStar /></span>
                         </div>
                     </div>
                 </div>
@@ -88,12 +88,12 @@ function FilterSlider() {
                         <div className="_desc text-center">
                             <Link>Apple Cinema 30-inch HD Flat-Panel Display</Link>
                         </div>
-                        <div class="rating">
-                            <span class="icon-ratings"><AiOutlineStar /></span>
-                            <span class="icon-ratings"><AiOutlineStar /></span>
-                            <span class="icon-ratings"><AiOutlineStar /></span>
-                            <span class="icon-ratings"><AiOutlineStar /></span>
-                            <span class="icon-ratings"><AiOutlineStar /></span>
+                        <div className="rating">
+                            <span className="icon-ratings"><AiOutlineStar /></span>
+                            <span className="icon-ratings"><AiOutlineStar /></span>
+                            <span className="icon-ratings"><AiOutlineStar /></span>
+                            <span className="icon-ratings"><AiOutlineStar /></span>
+                            <span className="icon-ratings"><AiOutlineStar /></span>
                         </div>
                     </div>
                 </div>
@@ -128,12 +128,12 @@ function FilterSlider() {
                         <div className="_desc text-center">
                             <Link>Apple Cinema 30-inch HD Flat-Panel Display</Link>
                         </div>
-                        <div class="rating">
-                            <span class="icon-ratings"><AiOutlineStar /></span>
-                            <span class="icon-ratings"><AiOutlineStar /></span>
-                            <span class="icon-ratings"><AiOutlineStar /></span>
-                            <span class="icon-ratings"><AiOutlineStar /></span>
-                            <span class="icon-ratings"><AiOutlineStar /></span>
+                        <div className="rating">
+                            <span className="icon-ratings"><AiOutlineStar /></span>
+                            <span className="icon-ratings"><AiOutlineStar /></span>
+                            <span className="icon-ratings"><AiOutlineStar /></span>
+                            <span className="icon-ratings"><AiOutlineStar /></span>
+                            <span className="icon-ratings"><AiOutlineStar /></span>
                         </div>
                     </div>
                 </div>
@@ -168,12 +168,12 @@ function FilterSlider() {
                         <div className="_desc text-center">
                             <Link>Apple Cinema 30-inch HD Flat-Panel Display</Link>
                         </div>
-                        <div class="rating">
-                            <span class="icon-ratings"><AiOutlineStar /></span>
-                            <span class="icon-ratings"><AiOutlineStar /></span>
-                            <span class="icon-ratings"><AiOutlineStar /></span>
-                            <span class="icon-ratings"><AiOutlineStar /></span>
-                            <span class="icon-ratings"><AiOutlineStar /></span>
+                        <div className="rating">
+                            <span className="icon-ratings"><AiOutlineStar /></span>
+                            <span className="icon-ratings"><AiOutlineStar /></span>
+                            <span className="icon-ratings"><AiOutlineStar /></span>
+                            <span className="icon-ratings"><AiOutlineStar /></span>
+                            <span className="icon-ratings"><AiOutlineStar /></span>
                         </div>
                     </div>
                 </div>
@@ -208,12 +208,12 @@ function FilterSlider() {
                         <div className="_desc text-center">
                             <Link>Apple Cinema 30-inch HD Flat-Panel Display</Link>
                         </div>
-                        <div class="rating">
-                            <span class="icon-ratings"><AiOutlineStar /></span>
-                            <span class="icon-ratings"><AiOutlineStar /></span>
-                            <span class="icon-ratings"><AiOutlineStar /></span>
-                            <span class="icon-ratings"><AiOutlineStar /></span>
-                            <span class="icon-ratings"><AiOutlineStar /></span>
+                        <div className="rating">
+                            <span className="icon-ratings"><AiOutlineStar /></span>
+                            <span className="icon-ratings"><AiOutlineStar /></span>
+                            <span className="icon-ratings"><AiOutlineStar /></span>
+                            <span className="icon-ratings"><AiOutlineStar /></span>
+                            <span className="icon-ratings"><AiOutlineStar /></span>
                         </div>
                     </div>
                 </div>
@@ -248,12 +248,12 @@ function FilterSlider() {
                         <div className="_desc text-center">
                             <Link>Apple Cinema 30-inch HD Flat-Panel Display</Link>
                         </div>
-                        <div class="rating">
-                            <span class="icon-ratings"><AiOutlineStar /></span>
-                            <span class="icon-ratings"><AiOutlineStar /></span>
-                            <span class="icon-ratings"><AiOutlineStar /></span>
-                            <span class="icon-ratings"><AiOutlineStar /></span>
-                            <span class="icon-ratings"><AiOutlineStar /></span>
+                        <div className="rating">
+                            <span className="icon-ratings"><AiOutlineStar /></span>
+                            <span className="icon-ratings"><AiOutlineStar /></span>
+                            <span className="icon-ratings"><AiOutlineStar /></span>
+                            <span className="icon-ratings"><AiOutlineStar /></span>
+                            <span className="icon-ratings"><AiOutlineStar /></span>
                         </div>
                     </div>
                 </div>

@@ -3,12 +3,16 @@ import { AiOutlineStar, AiOutlineHeart, AiOutlineSearch } from "react-icons/ai";
 import { BsHandbag } from "react-icons/bs";
 import { CgViewDay, CgViewGrid, CgViewList } from "react-icons/cg";
 import { Link } from 'react-router-dom';
-import RangeSlider from 'react-range-slider-input';
-import 'react-range-slider-input/dist/style.css';
+import Slider from "@mui/material/Slider";
 import './index.scss';
 
 const Shop = () => {
     const [valuePrice, setValuePrice] = useState([1, 1000]);
+
+    const handleSliderChange = (e) => {
+        setValuePrice(e.target.value);
+    };
+
 
     return (
         <div className='shop'>
@@ -16,15 +20,57 @@ const Shop = () => {
                 <div className="row">
                     <div className="col-lg-2">
                         <div className="shop-left">
-                            <RangeSlider
-                                min={1}
-                                max={1000}
-                                value={valuePrice}
-                            />
-                            <p>
-                                {" "}
-                                Your range of Price is between {valuePrice[0]} and {valuePrice[1]}
-                            </p>
+                            <div className="product_slider_range">
+                                <Slider
+                                    value={valuePrice}
+                                    onChange={handleSliderChange}
+                                    min={1}
+                                    max={1000}
+                                />
+                                <p>
+                                    {" "}
+                                    {valuePrice[0]} &&  {valuePrice[1]}
+                                </p>
+                            </div>
+                            <div className="filter-attribute-container">
+                                <label>Color</label>
+                                <div className="list-group-item">
+                                    <Link>Black <span>(4)</span></Link>
+                                </div>
+                                <div className="list-group-item">
+                                    <Link>Black <span>(4)</span></Link>
+                                </div>
+                                <div className="list-group-item">
+                                    <Link>Black <span>(4)</span></Link>
+                                </div>
+                                <div className="list-group-item">
+                                    <Link>Black <span>(4)</span></Link>
+                                </div>
+                                <div className="list-group-item">
+                                    <Link>Black <span>(4)</span></Link>
+                                </div>
+                            </div>
+                            <div className="filter-attribute-container">
+                                <label>Categories</label>
+                                <div className="list-group-item">
+                                    <Link>Basket <span>(4)</span></Link>
+                                </div>
+                                <div className="list-group-item">
+                                    <Link>Basket <span>(4)</span></Link>
+                                </div>
+                                <div className="list-group-item">
+                                    <Link>Basket <span>(4)</span></Link>
+                                </div>
+                                <div className="list-group-item">
+                                    <Link>Basket <span>(4)</span></Link>
+                                </div>
+                                <div className="list-group-item">
+                                    <Link>Basket <span>(4)</span></Link>
+                                </div>
+                            </div>
+                            <div className="filter-attribute-container">
+                                <img src="http://umino.demo.towerthemes.com/image/catalog/ptblock/img-sidebar.jpg" alt="" />
+                            </div>
                         </div>
                     </div>
                     <div className="col-lg-10">

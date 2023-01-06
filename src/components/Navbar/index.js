@@ -5,6 +5,7 @@ import { AiOutlineHeart, AiOutlineShoppingCart, AiOutlineSearch } from "react-ic
 import { BsFillPersonFill } from "react-icons/bs";
 
 const Navbar = () => {
+
   return (
     <div classname="navbar">
       <div className="container">
@@ -72,9 +73,13 @@ const Navbar = () => {
               <div className="user_login_register d-flex">
                 <BsFillPersonFill />
                 <div className="login_register d-flex align-items-center">
-                  <Link to="">Register</Link>
+                  <Link type="button" data-modal="register">
+                    Register
+                  </Link>
                   <span> or</span>
-                  <Link to="">Login</Link>
+                  <Link type="button" data-modal="login">
+                    Login
+                  </Link>
                 </div>
               </div>
             </div>

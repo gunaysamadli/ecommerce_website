@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,16 +11,32 @@ import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import Error from "./components/Error";
 import Shop from "./pages/Shop";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import ModalManager from "./components/ModalManager";
 
 
 export default function App() {
+
+  const [modalOpen, setModal] = useState(false);
+
+  const closeModal = () => {
+    setModal('');
+  };
+
   return (
     <Router>
-      <div>
-        <Navbar />
+      <div className="app--shell" onClick={openModal}>
+        <Navbar closeFn={closeModal} modal={modalOpen} />
         <Switch>
           <Route path="/" exact>
             <Home />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/register">
+            <Register />
           </Route>
           <Route path="/shop" exact>
             <Shop />
@@ -33,6 +49,7 @@ export default function App() {
           </Route>
           <Redirect to="/error" />
         </Switch>
+        <ModalManager closeFn={closeModal} modal={modalOpen} />
         <Footer />
       </div>
     </Router>

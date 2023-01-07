@@ -14,11 +14,22 @@ import Shop from "./pages/Shop";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import ModalManager from "./components/ModalManager";
+import Detail from "./components/Detail";
 
 
 export default function App() {
 
   const [modalOpen, setModal] = useState(false);
+
+  const openModal = event => {
+    event.preventDefault();
+    const {
+      target: {
+        dataset: { modal }
+      }
+    } = event;
+    if (modal) setModal(modal);
+  };
 
   const closeModal = () => {
     setModal('');
@@ -40,6 +51,9 @@ export default function App() {
           </Route>
           <Route path="/shop" exact>
             <Shop />
+          </Route>
+          <Route path="/detail" exact>
+            <Detail />
           </Route>
           <Route path="/contact" exact>
             <Contact />

@@ -1,0 +1,104 @@
+.related-product{
+    padding: 40px 0;
+    h2{
+        text-align: center;
+        margin: 10px 0;
+    }
+    .filter-slider-cart{
+        width: 250px;
+        height: auto;
+        padding: 10px;
+        .filter-slider-cart-body{
+            border: 1px solid  #767676;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+    
+            .filter-slider-cart-top{
+                
+                margin-bottom: 10px;
+                ._img{
+                    width: 160px;
+                    height: 160px;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                        display: block;
+                        
+                    }
+    
+                    &:hover{
+                        display: none;
+    
+                    }
+                    &:hover +._cart_top_hover{
+                        display: block;
+                    }
+                }
+    
+                ._cart_top_hover{
+                    display: none;
+                    width: 160px;
+                    height: 160px;
+                    ._img{
+                        width: 130px;
+                        height: 130px;
+                    }
+                    ._icon{
+                        line-height: 38px;
+                        width: 38px;
+                        background-color: #fed100;
+                        font-weight: normal;
+                        font-size: 0;
+                        padding: 0;
+                        text-align: center;
+                        color: #333;
+                        border-radius: 100%;
+                        margin-right: 5px;
+                        cursor: pointer;
+                        svg{
+                            width: 16px;
+                            height: 16px;
+                        }
+    
+                        &:hover{
+                            background: #cd131c;
+                            svg{
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+    
+            }
+            .filter-slider-cart-bottom{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .rating{
+                    svg{
+                        width: 15px;
+                        height: 15px;
+                    }
+                }
+                
+                div{
+                    margin-bottom: 12px;
+                }
+            }
+    
+        }
+    
+        
+    }
+    
+    .slick-prev, .slick-next{
+        &::before{
+            color: #fed100 !important;
+            font-size: 30px;
+        }
+    }
+
+}
+

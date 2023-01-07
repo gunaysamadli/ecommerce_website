@@ -15,6 +15,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import ModalManager from "./components/ModalManager";
 import Detail from "./components/Detail";
+import Checkout from "./pages/Checkout";
 
 
 export default function App() {
@@ -54,6 +55,9 @@ export default function App() {
           </Route>
           <Route path="/detail" exact>
             <Detail />
+          </Route>
+          <Route path="/checkout" exact>
+            <Checkout />
           </Route>
           <Route path="/contact" exact>
             <Contact />

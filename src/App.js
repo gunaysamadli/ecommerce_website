@@ -16,6 +16,7 @@ import Register from "./components/Register";
 import ModalManager from "./components/ModalManager";
 import Detail from "./components/Detail";
 import Checkout from "./pages/Checkout";
+import Comparison from "./pages/Comparison";
 
 
 export default function App() {
@@ -58,6 +59,9 @@ export default function App() {
           </Route>
           <Route path="/checkout" exact>
             <Checkout />
+          </Route>
+          <Route path="/comparison" exact>
+            <Comparison />
           </Route>
           <Route path="/contact" exact>
             <Contact />

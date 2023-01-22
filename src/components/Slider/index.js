@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Slider from "react-slick";
 import './index.scss';
 import Button from '../Button'
@@ -10,11 +10,9 @@ function SimpleSlider() {
 
   const dispatch = useDispatch();
 
-
   useEffect(() => {
     dispatch(getSliders());
   }, [dispatch]);
-
 
 
   const sliders = useSelector(state => state.allSliders.sliders);
@@ -30,8 +28,8 @@ function SimpleSlider() {
 
   return (
     <Slider {...settings}>
-      {sliders.map(({ title, subtitle, imageName,buttonName }) => (
-        <div className="slider-item">
+      {sliders.map(({ id, title, subtitle, imageName, buttonName }) => (
+        <div className="slider-item" key={id}>
           <img src={imageName} alt="" />
           <div className="slider-item_body">
             <div className="col-lg-6">

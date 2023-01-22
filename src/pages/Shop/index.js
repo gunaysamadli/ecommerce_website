@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { AiOutlineStar, AiOutlineHeart, AiOutlineSearch } from "react-icons/ai";
 import { BsHandbag } from "react-icons/bs";
 import { CgViewDay, CgViewGrid, CgViewList } from "react-icons/cg";
 import { Link } from 'react-router-dom';
 import Slider from "@mui/material/Slider";
 import './index.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import { getColors } from '../../redux/actions/colorAction';
 
 const Shop = () => {
     const [valuePrice, setValuePrice] = useState([1, 1000]);
@@ -12,6 +14,14 @@ const Shop = () => {
     const handleSliderChange = (e) => {
         setValuePrice(e.target.value);
     };
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getColors());
+    }, [dispatch]);
+
+    const colors = useSelector(state => state.allColors.colors);
 
 
     return (
@@ -34,21 +44,13 @@ const Shop = () => {
                             </div>
                             <div className="filter-attribute-container">
                                 <label>Color</label>
-                                <div className="list-group-item">
-                                    <Link>Black <span>(4)</span></Link>
-                                </div>
-                                <div className="list-group-item">
-                                    <Link>Black <span>(4)</span></Link>
-                                </div>
-                                <div className="list-group-item">
-                                    <Link>Black <span>(4)</span></Link>
-                                </div>
-                                <div className="list-group-item">
-                                    <Link>Black <span>(4)</span></Link>
-                                </div>
-                                <div className="list-group-item">
-                                    <Link>Black <span>(4)</span></Link>
-                                </div>
+                                {
+                                    colors.map(({ id, colorName }) => (
+                                        <div className="list-group-item" key={id}>
+                                            <Link>{colorName} <span>(4)</span></Link>
+                                        </div>
+                                    ))
+                                }
                             </div>
                             <div className="filter-attribute-container">
                                 <label>Categories</label>

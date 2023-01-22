@@ -2,40 +2,48 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import './index.scss';
 import Button from '../Button'
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getSliders } from "../../redux/actions/sliderAction";
 
-export default class SimpleSlider extends Component {
-    render() {
-        const settings = {
-            dots: true,
-            arrows:false,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-        };
-        return (
-            <Slider {...settings}>
-                <div className="slider-item">
-                    <img src="http://umino.demo.towerthemes.com/image/cache/catalog/slider/slideshow1-2-1920x470.jpg" alt="" />
-                    <div className="slider-item_body">
-                        <div className="col-lg-6">
-                            <h2>Wooden Chair</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit debitis ipsum autem quibusdam! Sed quaerat, laboriosam assumenda amet numquam autem odio placeat dicta repellendus nesciunt hic consectetur itaque nisi delectus!</p>
-                           <Button base >Read me</Button>
-                        </div>
-                    </div>
-                </div>
-                <div className="slider-item">
-                    <img src="http://umino.demo.towerthemes.com/image/cache/catalog/slider/slideshow1-1-1920x470.jpg" alt="" />
-                    <div className="slider-item_body">
-                        <div className="col-lg-6">
-                            <h2>Wooden Chair</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit debitis ipsum autem quibusdam! Sed quaerat, laboriosam assumenda amet numquam autem odio placeat dicta repellendus nesciunt hic consectetur itaque nisi delectus!</p>
-                            <Button base>Read me</Button>
-                        </div>
-                    </div>
-                </div>
-            </Slider>
-        );
-    }
+function SimpleSlider() {
+
+  const dispatch = useDispatch();
+
+
+  useEffect(() => {
+    dispatch(getSliders());
+  }, [dispatch]);
+
+
+
+  const sliders = useSelector(state => state.allSliders.sliders);
+
+  const settings = {
+    dots: true,
+    arrows: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  }
+
+  return (
+    <Slider {...settings}>
+      {sliders.map(({ title, subtitle, imageName,buttonName }) => (
+        <div className="slider-item">
+          <img src={imageName} alt="" />
+          <div className="slider-item_body">
+            <div className="col-lg-6">
+              <h2>{title}</h2>
+              <p>{subtitle}</p>
+              <Button base >{buttonName}</Button>
+            </div>
+          </div>
+        </div>
+      ))}
+
+    </Slider >
+  );
 }
+export default SimpleSlider;

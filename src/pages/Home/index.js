@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div>
       <SimpleSlider />
-      <FilterProduct/>
+      <FilterProduct />
     </div>
   )
 }

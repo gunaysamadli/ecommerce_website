@@ -18,25 +18,31 @@ a{
 .top-header{
     padding: 40px 0;
     .header_search{
+       form{
         position: relative;
+        margin: auto;
         .header_search_input{
             border: 2px solid #fed100;
             width: 100%;
             padding: 15px;
             border-radius: 30px;
             outline: none;
+            margin-bottom: 0 !important;
         }
 
-        .search_btn button{
+        .search_btn{
             position: absolute;
-            top: 50%; 
+            top: 50%;
             right: 0;
             transform: translate(-50%, -50%);
-            border: none !important;
-            background-color: #fff;
            
-            
+            button{
+                border: none !important;
+                background-color: #fff;
+            }
         }
+       }
+        
         
     }
 

@@ -3,9 +3,12 @@ import { Link } from 'react-router-dom';
 import "./index.scss"
 import { AiOutlineHeart, AiOutlineShoppingCart, AiOutlineSearch } from "react-icons/ai";
 import { BsFillPersonFill } from "react-icons/bs";
+import { useAppContext } from '../../context/App';
+import Carts from '../Cart';
 
 const Navbar = () => {
-
+  const [{ cartItems,show,toggleSidebar }] = useAppContext();
+  
   return (
     <div classname="navbar">
       <div className="container">
@@ -37,10 +40,19 @@ const Navbar = () => {
                   </Link>
                 </div>
                 <div className="basket_icon">
-                  <Link to="/whislist">
+                  <div onClick={toggleSidebar} >
                     <AiOutlineShoppingCart />
-                    <span className='product_count'>0</span>
-                  </Link>
+                    {cartItems.length ? (
+                      <span className='product_count'>{cartItems.length}</span>
+                    ) : (
+                      <span className='product_count'>0</span>
+                    )}
+                  </div>
+                  <>
+                    {
+                      show ? <Carts /> : ""
+                    }
+                  </>
                 </div>
               </div>
             </div>

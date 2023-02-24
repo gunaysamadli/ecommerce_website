@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import { AiOutlineStar, AiOutlineHeart, AiOutlineSearch } from "react-icons/ai";
-import { BsHandbag } from "react-icons/bs";
+import React, { useEffect, useState } from 'react';
 import { CgViewDay, CgViewGrid, CgViewList } from "react-icons/cg";
 import { Link } from 'react-router-dom';
 import Slider from "@mui/material/Slider";
@@ -9,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getProducts } from '../../redux/actions/productAction';
 import { getColors } from '../../redux/actions/colorAction';
 import { getCategories } from '../../redux/actions/categoryAction';
+import Products from '../../components/Products';
 
 const Shop = () => {
 
@@ -188,64 +187,7 @@ const Shop = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="product_layouts">
-                                    <div className="row">
-                                        {filter.length ?
-                                            filter.map(({ id, name, price, imageName }) => (
-
-                                                <div className="col-lg-6" key={id}>
-                                                    <div className='product-cart'>
-                                                        <div className="product-cart-top">
-                                                            <div className="cart_top">
-                                                                <div className="_img">
-                                                                    <img
-                                                                        src={imageName}
-                                                                        alt={name}
-                                                                    />
-                                                                </div>
-                                                            </div>
-                                                            <div className="cart_top_hover">
-                                                                <div className="_img">
-                                                                    <img
-                                                                        src={imageName}
-                                                                        alt={name}
-                                                                    />
-                                                                </div>
-                                                                <div className="_icons d-flex justify-content-center">
-                                                                    <div className="_icon">
-                                                                        <BsHandbag />
-                                                                    </div>
-                                                                    <div className="_icon">
-                                                                        <AiOutlineHeart />
-                                                                    </div>
-                                                                    <div className="_icon">
-                                                                        <AiOutlineSearch />
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="product-cart-bottom">
-                                                            <div className="_price">
-                                                                ${price}
-                                                            </div>
-                                                            <div className="_desc text-center">
-                                                                <Link>{name}</Link>
-                                                            </div>
-                                                            <div className="rating">
-                                                                <span className="icon-ratings"><AiOutlineStar /></span>
-                                                                <span className="icon-ratings"><AiOutlineStar /></span>
-                                                                <span className="icon-ratings"><AiOutlineStar /></span>
-                                                                <span className="icon-ratings"><AiOutlineStar /></span>
-                                                                <span className="icon-ratings"><AiOutlineStar /></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            ))
-                                            : <div></div>
-                                        }
-                                    </div>
-                                </div>
+                                <Products filter={filter}/>
                             </div>
                         </div>
                     </div>

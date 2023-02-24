@@ -1,0 +1,27 @@
+.cart-dropdown-menu-close{
+    position: absolute;
+    top: 5px;
+    right: 20px;
+}
+.cart-items{
+    .cart_item{
+        background-color: black;
+        table{
+            tr{
+                background: #fff;
+                padding-right: 2rem;
+                margin-bottom: 2rem;
+                padding-bottom: 2rem;
+                border-bottom: 1px solid #f0f0f0;
+                .cart-image{
+                    width:85px;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+        
+    }
+}

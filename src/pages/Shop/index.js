@@ -8,14 +8,34 @@ import './index.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProducts } from '../../redux/actions/productAction';
 import { getColors } from '../../redux/actions/colorAction';
+import { getCategories } from '../../redux/actions/categoryAction';
 
 const Shop = () => {
 
-    const [valuePrice, setValuePrice] = useState([1, 1000]);
-
     const products = useSelector(state => state.allProducts.products);
 
-    const [objectsToShow, setToShow] = useState(products);
+    useEffect(() => {
+        if (products.length) {
+            setFilter(products);
+        }
+    }, [products]);
+
+    const [valuePrice, setValuePrice] = useState([1, 5000]);
+    const [filter, setFilter] = useState([]);
+
+
+    const handleSliderChange = (e) => {
+        setValuePrice(e.target.value);
+        const minPrice = valuePrice[0];
+        const maxPrice = valuePrice[1];
+        const newList = products.filter(
+            (item) => item.price >= minPrice && item.price <= maxPrice
+        );
+        setFilter(newList);
+
+    };
+
+
 
     const compare = (a, b, ascendingOrder) => {
         if (a < b) {
@@ -29,7 +49,7 @@ const Shop = () => {
 
     const handleChange = (value) => {
         if (value === 'none') {
-            setToShow([...products])
+            setFilter([...products])
         } else {
             let toType, toAscending
             switch (value) {
@@ -44,23 +64,22 @@ const Shop = () => {
                 compare(a.name, b.name, toAscending)
                 :
                 compare(a.price, b.price, toAscending))
-            setToShow([...current])
+            setFilter([...current])
         }
     }
 
-    const handleSliderChange = (e) => {
-        setValuePrice(e.target.value);
-    };
+
 
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getProducts())
-        dispatch(getColors())
+        dispatch(getProducts());
+        dispatch(getColors());
+        dispatch(getCategories());
     }, [dispatch]);
 
     const colors = useSelector(state => state.allColors.colors);
-
+    const categories = useSelector(state => state.allCategories.categories);
 
     return (
         <div className='shop'>
@@ -73,7 +92,7 @@ const Shop = () => {
                                     value={valuePrice}
                                     onChange={handleSliderChange}
                                     min={1}
-                                    max={1000}
+                                    max={5000}
                                 />
                                 <p>
                                     {" "}
@@ -85,28 +104,20 @@ const Shop = () => {
                                 {
                                     colors.map(({ id, colorName }) => (
                                         <div className="list-group-item" key={id}>
-                                            <Link>{colorName} <span>(4)</span></Link>
+                                            <Link>{colorName} <span>()</span></Link>
                                         </div>
                                     ))
                                 }
                             </div>
                             <div className="filter-attribute-container">
                                 <label>Categories</label>
-                                <div className="list-group-item">
-                                    <Link>Basket <span>(4)</span></Link>
-                                </div>
-                                <div className="list-group-item">
-                                    <Link>Basket <span>(4)</span></Link>
-                                </div>
-                                <div className="list-group-item">
-                                    <Link>Basket <span>(4)</span></Link>
-                                </div>
-                                <div className="list-group-item">
-                                    <Link>Basket <span>(4)</span></Link>
-                                </div>
-                                <div className="list-group-item">
-                                    <Link>Basket <span>(4)</span></Link>
-                                </div>
+                                {
+                                    categories.map(({ id, name }) => (
+                                        <div className="list-group-item" key={id}>
+                                            <Link>{name} <span>()</span></Link>
+                                        </div>
+                                    ))
+                                }
                             </div>
                             <div className="filter-attribute-container">
                                 <img src="http://umino.demo.towerthemes.com/image/catalog/ptblock/img-sidebar.jpg" alt="" />
@@ -179,8 +190,8 @@ const Shop = () => {
                                 </div>
                                 <div className="product_layouts">
                                     <div className="row">
-                                        {
-                                            objectsToShow.map(({ id, name, price, imageName }) => (
+                                        {filter.length ?
+                                            filter.map(({ id, name, price, imageName }) => (
 
                                                 <div className="col-lg-6" key={id}>
                                                     <div className='product-cart'>
@@ -231,6 +242,7 @@ const Shop = () => {
                                                     </div>
                                                 </div>
                                             ))
+                                            : <div></div>
                                         }
                                     </div>
                                 </div>
